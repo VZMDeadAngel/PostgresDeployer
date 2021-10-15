@@ -33,14 +33,8 @@
     <PackageReference Include="Npgsql" Version="5.0.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="pgdiff.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="cd ../pgdiff&#xD;&#xA;go build -o $(ProjectDir)" />
+    <Exec Command="cd ../pgdiff&#xD;&#xA;go build -o $(TargetDir)" />
   </Target>
 
 </Project>
