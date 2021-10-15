@@ -13,11 +13,11 @@
 
 			<!-- Data for user connection postgres. -->
 			<!-- These credentials are used to create a temporary database -->
-			<User>				<!-- user name --></User>
-			<Password>				<!-- password --></Password>
-			<Port>				<!-- 5432? --></Port>
-			<Host>				<!-- host name --></Host>
-			<DatabaseName>				<!-- temp database name --></DatabaseName>
+			<User><!-- user name --></User>
+			<Password><!-- password --></Password>
+			<Port><!-- 5432? --></Port>
+			<Host><!-- host name --></Host>
+			<DatabaseName><!-- temp database name --></DatabaseName>
 		</TargetTempDataBase>
 	</Common>
 
@@ -27,11 +27,11 @@
 
 			<!-- Target database to which changes are applied -->
 			<TargetDataBase>
-				<User>					<!-- user name --></User>
-				<Password>					<!-- password --></Password>
-				<Port>					<!-- 5432? --></Port>
-				<Host>					<!-- host name --></Host>
-				<DatabaseName>					<!-- target database name --></DatabaseName>
+				<User><!-- user name --></User>
+				<Password><!-- password --></Password>
+				<Port><!-- 5432? --></Port>
+				<Host><!-- host name --></Host>
+				<DatabaseName><!-- target database name --></DatabaseName>
 			</TargetDataBase>
 		</Enviroment>
 	</Enviroments>

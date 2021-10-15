@@ -40,7 +40,7 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="cd $(SolutionDir)pgdiff&#xD;&#xA;go build -o $(ProjectDir)" />
+    <Exec Command="cd ../pgdiff&#xD;&#xA;go build -o $(ProjectDir)" />
   </Target>
 
 </Project>
