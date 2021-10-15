@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Settings xmlns="http://tempuri.org/SettingsSchema.xsd">
+	<Common>
+		<!-- Path to DataBase project folder -->
+		<ScriptsFilesPath>../../../../DataBase</ScriptsFilesPath>
+
+		<!-- Path to files of scripts filling execution after deployment -->
+		<PostDeploymentScriptsFilesPath>../../../../DataBase/PostDeploymentScripts</PostDeploymentScriptsFilesPath>
+
+		<!-- Parameters of the generated database from project files -->
+		<TargetTempDataBase>
+
+			<!-- Data for user connection postgres. -->
+			<!-- These credentials are used to create a temporary database -->
+			<User>				<!-- user name --></User>
+			<Password>				<!-- password --></Password>
+			<Port>				<!-- 5432? --></Port>
+			<Host>				<!-- host name --></Host>
+			<DatabaseName>				<!-- temp database name --></DatabaseName>
+		</TargetTempDataBase>
+	</Common>
+
+	<!-- Settings for different deployment environments -->
+	<Enviroments>
+		<Enviroment Name="DevelopmentServer" ExecuteOnTarget="true">
+
+			<!-- Target database to which changes are applied -->
+			<TargetDataBase>
+				<User>					<!-- user name --></User>
+				<Password>					<!-- password --></Password>
+				<Port>					<!-- 5432? --></Port>
+				<Host>					<!-- host name --></Host>
+				<DatabaseName>					<!-- target database name --></DatabaseName>
+			</TargetDataBase>
+		</Enviroment>
+	</Enviroments>
+</Settings>

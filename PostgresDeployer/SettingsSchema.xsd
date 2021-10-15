@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SettingsSchema"
+    targetNamespace="http://tempuri.org/SettingsSchema.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/SettingsSchema.xsd"
+    xmlns:mstns="http://tempuri.org/SettingsSchema.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+	<xs:element name="Settings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Common" >
+					<xs:annotation>
+						<xs:documentation>
+							Block with common parameters for the entire application
+						</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ScriptsFilesPath" type="xs:string" minOccurs="1" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>
+										Relative path to database scripts directory. Default value: DataBase
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="PostDeploymentScriptsFilesPath" type="xs:string" minOccurs="1" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>
+										Relative path to the scripts directory post-deployment. Default value: DataBase\PostDeploymentScripts
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="TargetTempDataBase" minOccurs="1" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="User" type="xs:string" minOccurs="1" maxOccurs="1" />
+										<xs:element name="Password" type="xs:string" minOccurs="1" maxOccurs="1" />
+										<xs:element name="Port" type="xs:unsignedShort" minOccurs="1" maxOccurs="1" />
+										<xs:element name="Host" type="xs:string" minOccurs="1" maxOccurs="1" />
+										<xs:element name="DatabaseName" type="xs:string" minOccurs="1" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Enviroments">
+					<xs:annotation>
+						<xs:documentation>
+							An array of configuration environments
+						</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Enviroment" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="TargetDataBase" minOccurs="1" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="User" type="xs:string" minOccurs="1" maxOccurs="1" />
+													<xs:element name="Password" type="xs:string" minOccurs="1" maxOccurs="1" />
+													<xs:element name="Port" type="xs:unsignedShort" minOccurs="1" maxOccurs="1" />
+													<xs:element name="Host" type="xs:string" minOccurs="1" maxOccurs="1" />
+													<xs:element name="DatabaseName" type="xs:string" minOccurs="1" maxOccurs="1" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Name" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>
+												Name of the deployment environment
+											</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ExecuteOnTarget" type="xs:boolean" use="required">
+										<xs:annotation>
+											<xs:documentation>
+												Execute the deployment script on the server after it is created
+											</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
